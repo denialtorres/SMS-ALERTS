@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<body>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <%= link_to "Agregar Contacto", {controller: "contacts", action: "new"}, class: "btn btn-block btn-lg btn-primary" %>
+          </div>
+          <div class="col-md-6">
+            <%= link_to "Mandar Alerta", {controller: "alerts", action: "new"}, class: "btn btn-block btn-lg btn-primary" %>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Lista de Contactos</h1>
+                 
+                <table>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                  </tr>
+                 
+                  <% @contacts.each do |contact| %>
+                    <tr>
+                      <td><%= contact.name %></td>
+                      <td><%= contact.phone %></td>
+                    </tr>
+                  <% end %>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h1>Mensajes Enviados</h1>
+                <table>
+                  <tr>
+                    <th>Mensaje</th>
+                  </tr>
+                 
+                  <% @alerts.each do |alert| %>
+                    <tr>
+                      <td><%= alert.message %></br></br></td>
+                    </tr>
+                  <% end %>
+                </table>
+            </div>
+        
+      </div>
+    </div>
+</body>
