@@ -1,6 +1,5 @@
 class AlertsController < ApplicationController
   before_action :set_alert, only: [:show, :edit, :update, :destroy]
-  before_action :credential, only: [:create]
   # GET /alerts
   # GET /alerts.json
   def index
@@ -28,12 +27,9 @@ class AlertsController < ApplicationController
     
     puts "Creas la alerta"
     
-    @client = Twilio::REST::Client.new @account_sid, @auth_token
+    @client = Twilio::REST::Client.new 
     
     Contact.all.each do |contact|
-      puts contact.name
-      puts contact.phone
-      puts @alert.message
       @client.api.account.messages.create({
         :from => '+15627312206',
         :to => "+52#{contact.phone}",
@@ -87,8 +83,4 @@ class AlertsController < ApplicationController
       params.require(:alert).permit(:message)
     end
     
-    def credential 
-      @account_sid = 'AC248cb2931b0eef49ffa9e240e27c4a70'
-      @auth_token = '19d8e06c60d72ee8e8c744d9e8b5dbc9'
-    end
 end
