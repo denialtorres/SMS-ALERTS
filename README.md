@@ -1,24 +1,25 @@
-
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
-
-
-Welcome to your Rails project on Cloud9 IDE!
-
-To get started, just do the following:
-
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://HOSTNAME/).
-
-Happy coding!
-The Cloud9 IDE team
+   _____ __  __  _____              _      ______ _____ _______ _____ 
+  / ____|  \/  |/ ____|       /\   | |    |  ____|  __ \__   __/ ____|
+ | (___ | \  / | (___ ______ /  \  | |    | |__  | |__) | | | | (___  
+  \___ \| |\/| |\___ \______/ /\ \ | |    |  __| |  _  /  | |  \___ \ 
+  ____) | |  | |____) |    / ____ \| |____| |____| | \ \  | |  ____) |
+ |_____/|_|  |_|_____/    /_/    \_\______|______|_|  \_\ |_| |_____/ 
 
 
-## Support & Documentation
+El escenario principal es generar una base de datos de voluntarios y expertos que esten cerca de las zonas de desastre y movilizarlos y manterlos informados de como y donde pueden ayudar.
+Con la meta principal de coordinar esfuerzos entre la comunidad.
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+## Escenarios Actuales - 21/09/2017
+Como voluntario registro mis datos y numero telefonico, y
+específico en que areas puedo ayudar y eligo en que zonas me cuentro para poder ayudar.
+
+Como manager mando mensajes de alertas de sms segun la descripcion y el area en especifico.
+
+Por ejemplo si se necesita ayuda en el centro de Morelos para remover escombros.
+
+Escribo la alerta y le mando el sms a los voluntarios que cumplan con las condiciones anteriores (zona y tipo de ayuda)
+
+
+
+## Staging
+https://sismomx-sms.herokuapp.com/
