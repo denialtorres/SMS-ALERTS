@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.su-header{
+.sms-header{
   padding-top: 24px;
   padding-left: 24px;
   font-size: 24px;
@@ -11,18 +11,18 @@ body {
   text-align: left;
 }
 
-.su-description{
+.sms-description{
   padding-left: 24px;
   text-align: left;
 }
 
-.su-add-new-zone{
+.sms-add-new-zone{
   font-size: 16px;
   text-align: left;
   font-weight: bold;
 }
 
-.su-btn-primary{
+.sms-btn-primary{
   width: 90%;
   margin-left: 5%;
   height: 44px;
