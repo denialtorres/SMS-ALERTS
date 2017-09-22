@@ -19,6 +19,14 @@
     <%= f.label :phone %><br>
     <%= f.text_field :phone %>
   </div>
+  
+    <div class="field">
+      <%= hidden_field_tag "contact[category_ids][]", nil %>
+      <% Category.all.each do |category| %>
+        <%= check_box_tag "contact[category_ids][]", category.id, @contact.category_ids.include?(category.id), id: dom_id(category) %>
+        <%= label_tag dom_id(category), category.name %><br>
+      <% end %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>
