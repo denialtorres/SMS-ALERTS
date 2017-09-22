@@ -23,7 +23,10 @@ module Workspace
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.serve_static_assets = true
-    Rails.application.config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
-    Rails.application.config.assets.precompile += ["*.js.es6", "*.scss"]
+    .config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
+    config.assets.precompile += ["*.js.es6", "*.scss"]
+     config.assets.precompile += [
+     'application.scss'
+     ]
   end
 end
