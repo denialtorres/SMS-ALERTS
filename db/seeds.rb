@@ -12,3 +12,4 @@ Category.create!(value: 8 , name: "Etiquetar Víveres", description: "Ayudanos a
 Category.create!(value: 9 , name: "Relevo Voluntarios", description: "La gente necesita ayuda 24/7, necesitamos de tu asistencia." )
 Category.create!(value: 10, name: "Asistencia con Equipos de Sonido", description: "Cuentas con equipo de sonido especial que nos ayude a localizar gente en los escombros?, ayudanos!!")
 Category.create!(value: 11, name: "Transporte General", description: "Cuentas con medio de transporte para mover equipo de todo tipo de un lado a otro?. Ayudanos!")
+
