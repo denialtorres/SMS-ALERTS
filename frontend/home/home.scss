@@ -1,0 +1,162 @@
+// Home styles
+
+// Variables
+$font-primary: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+$color-black: #000;
+$color-white: #fff;
+$color-primary: #00d88e;
+$color-secundary: #e6e6e6;
+$box-shadow-color: #dadada;
+$color-gray-light: #a8a8a8;
+$border-gray-color: #e7e7e7; 
+
+body {
+  font-family: $font-primary;
+}
+
+// Buttons
+.btn {
+  &.btn-round-green {
+    border: 0;
+    color: $color-white;
+    background: $color-primary;
+    border-radius: 100px;
+    width: 256px;
+    height: 44px;
+
+    &:hover {
+      background: darken($color-primary, 2%);
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-primary;
+}
+
+.mb1 {
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: $font-primary;
+}
+
+// Header
+.sms-header {
+  padding: 50px 0 35px 0;
+
+  .sms-header__title {
+    font-weight: 700;
+  }
+
+  .sms-header__lead {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+}
+
+// Alerts
+.sms-alerts {
+  padding: 10px 0 20px 0;
+
+  .sms-panel-box {
+    padding: 20px;
+    box-shadow: 0 0 5px $box-shadow-color;
+    margin-bottom: 30px;
+    height: 300px;
+
+    .sms-panel-box__date {
+      color: $color-primary;
+      font-size: 16px;
+    }
+
+    .sms-panel-box__title {
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .sms-panel-box__description {
+      min-height: 150px;
+    }
+
+    .sms-panel-box__volunters {
+      color: $color-gray-light;
+      font-weight: 400;
+    }
+  }
+}
+
+// Footer
+.sms-footer {
+  background: $color-black;
+  padding: 25px 0;
+
+  .sms-footer__logotype {
+    width: 180px;
+  }
+
+  .sms-footer-navigation {
+    .nav {
+      li {
+        a {
+          color: $color-white;
+          text-decoration: none;
+
+          &:hover {
+            color: darken($color-white, 5%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Extra Small
+@media (max-width : 575px) {
+  .sms-alerts {
+    div[class*="col-"] {
+      padding: 0;
+
+      .sms-panel-box {
+        height: auto;
+        box-shadow: none;
+        border-bottom: 1px solid;
+        border-top: 1px solid;
+        border-color: $border-gray-color;
+        margin-bottom: -1px;
+
+        .sms-panel-box__description {
+          min-height: 25px;
+        }
+      }
+    }
+
+    .sms-button-row {
+      padding: 35px 0 0 0;
+    }
+  }
+
+  .sms-footer {
+    text-align: center;
+
+    .sms-footer-navigation {
+      margin-top: 25px;
+      
+      ul {
+        justify-content: center !important;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+// Small
+@media (max-width: 767px) {
+
+ }
