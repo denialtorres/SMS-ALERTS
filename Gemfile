@@ -30,6 +30,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
 gem 'twilio-ruby', '~> 5.2.3'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'popper_js', '~> 1.12.3'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
