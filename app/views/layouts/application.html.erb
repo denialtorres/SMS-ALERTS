@@ -18,6 +18,33 @@
 <body>
 
 <%= yield %>
+<footer class="sms-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <%= image_tag('logotype-lg.png', class: 'sms-footer__logotype') %>
+            </div>
+            <div class="col-md-8">
+                <nav class="sms-footer-navigation">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Website</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Twitter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Facebook</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Github</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
