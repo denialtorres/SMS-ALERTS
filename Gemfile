@@ -34,6 +34,7 @@ gem 'popper_js', '~> 1.12.3'
 gem 'geocomplete_rails'
 gem 'geocoder'
 gem 'interactor-rails'
+gem 'bootsnap', require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
