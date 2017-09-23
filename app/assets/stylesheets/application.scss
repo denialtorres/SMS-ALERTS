@@ -71,8 +71,8 @@ hr{
           text-decoration: none;
 
           &:hover {
-            background-color: white;
-						color: black;
+            background-color: $color-white;
+						color: $color-black;
 						font-weight: bold;
           }
         }
