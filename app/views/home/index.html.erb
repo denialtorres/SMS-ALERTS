@@ -19,66 +19,29 @@
       <div class="container">
           <h1>Anuncios</h1>
           <div class="row">
+            <% @alerts.each do |alert| %>
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                   <div class="sms-panel-box">
-                      <h5 class="sms-panel-box__date">Hace 5 minutos</h5>
-                      <h4 class="sms-panel-box__title">Estado: <strong>CDMX</strong></h4>
-                      <h4 class="sms-panel-box__title mb1">Zona: <strong>Álvaro Obregón</strong></h4>
-                      <p class="sms-panel-box__description">En Obrero Mundial y Torreón (Narvarte) necesitamos que lleven mazos, picos, 
-                      cubetas, guantes y lentes de trabajo.</p>
-                      <h6 class="sms-panel-box__volunters">Enviado a 4 voluntarios</h6>
+                      <h5 class="sms-panel-box__date">
+                        Hace
+                        <%= time_ago_in_words(alert.created_at) %>
+                      </h5>
+                      <h4 class="sms-panel-box__title">
+                        Estado: 
+                        <% query = get_state(alert.latitude, alert.longitude) %>
+                        <strong><%= query.state %></strong>
+                      </h4>
+                      <h4 class="sms-panel-box__title mb1">
+                        Zona: 
+                      <strong><%= get_zone(query) %></strong>
+                      </h4>
+                      <p class="sms-panel-box__description">
+                        <%= alert.message %>
+                      </p>
+                      <h6 class="sms-panel-box__volunters">Enviado a <%= alert.volunters %> voluntarios</h6>
                   </div>
               </div>
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                  <div class="sms-panel-box">
-                      <h5 class="sms-panel-box__date">Hace 5 minutos</h5>
-                      <h4 class="sms-panel-box__title">Estado: <strong>CDMX</strong></h4>
-                      <h4 class="sms-panel-box__title mb1">Zona: <strong>Álvaro Obregón</strong></h4>
-                      <p class="sms-panel-box__description">En Obrero Mundial y Torreón (Narvarte) necesitamos que lleven mazos, picos, 
-                      cubetas, guantes y lentes de trabajo.</p>
-                      <h6 class="sms-panel-box__volunters">Enviado a 4 voluntarios</h6>
-                  </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                  <div class="sms-panel-box">
-                      <h5 class="sms-panel-box__date">Hace 5 minutos</h5>
-                      <h4 class="sms-panel-box__title">Estado: <strong>CDMX</strong></h4>
-                      <h4 class="sms-panel-box__title mb1">Zona: <strong>Álvaro Obregón</strong></h4>
-                      <p class="sms-panel-box__description">En Obrero Mundial y Torreón (Narvarte) necesitamos que lleven mazos, picos, 
-                      cubetas, guantes y lentes de trabajo.</p>
-                      <h6 class="sms-panel-box__volunters">Enviado a 4 voluntarios</h6>
-                  </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                  <div class="sms-panel-box">
-                      <h5 class="sms-panel-box__date">Hace 5 minutos</h5>
-                      <h4 class="sms-panel-box__title">Estado: <strong>CDMX</strong></h4>
-                      <h4 class="sms-panel-box__title mb1">Zona: <strong>Álvaro Obregón</strong></h4>
-                      <p class="sms-panel-box__description">En Obrero Mundial y Torreón (Narvarte) necesitamos que lleven mazos, picos, 
-                      cubetas, guantes y lentes de trabajo.</p>
-                      <h6 class="sms-panel-box__volunters">Enviado a 4 voluntarios</h6>
-                  </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                  <div class="sms-panel-box">
-                      <h5 class="sms-panel-box__date">Hace 5 minutos</h5>
-                      <h4 class="sms-panel-box__title">Estado: <strong>CDMX</strong></h4>
-                      <h4 class="sms-panel-box__title mb1">Zona: <strong>Álvaro Obregón</strong></h4>
-                      <p class="sms-panel-box__description">En Obrero Mundial y Torreón (Narvarte) necesitamos que lleven mazos, picos, 
-                      cubetas, guantes y lentes de trabajo.</p>
-                      <h6 class="sms-panel-box__volunters">Enviado a 4 voluntarios</h6>
-                  </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                  <div class="sms-panel-box">
-                      <h5 class="sms-panel-box__date">Hace 5 minutos</h5>
-                      <h4 class="sms-panel-box__title">Estado: <strong>CDMX</strong></h4>
-                      <h4 class="sms-panel-box__title mb1">Zona: <strong>Álvaro Obregón</strong></h4>
-                      <p class="sms-panel-box__description">En Obrero Mundial y Torreón (Narvarte) necesitamos que lleven mazos, picos, 
-                      cubetas, guantes y lentes de trabajo.</p>
-                      <h6 class="sms-panel-box__volunters">Enviado a 4 voluntarios</h6>
-                  </div>
-              </div>
+            <% end %>
           </div>
           <div class="row">
               <div class="col">
