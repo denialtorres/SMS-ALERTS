@@ -13,6 +13,7 @@ class AlertsController < ApplicationController
 
   # GET /alerts/new
   def new
+    @categories = helpers.categories_collection
     @alert = Alert.new
   end
 
@@ -24,18 +25,19 @@ class AlertsController < ApplicationController
   # POST /alerts.json
   def create
     @alert = Alert.new(alert_params)
+    @alert.volunters = @alert.subscribed_users.count
+    set_coordinates(params[:search])
+    # @client = Twilio::REST::Client.new 
     
-    puts "Creas la alerta"
+    # Contact.all.each do |contact|
+    #   @client.api.account.messages.create({
+    #     :from => '+15627312206',
+    #     :to => "+52#{contact.phone}",
+    #     :body => @alert.message,
+    #   })
+    # end  
     
-    @client = Twilio::REST::Client.new 
-    
-    Contact.all.each do |contact|
-      @client.api.account.messages.create({
-        :from => '+15627312206',
-        :to => "+52#{contact.phone}",
-        :body => @alert.message,
-      })
-    end  
+   
     
     respond_to do |format|
       if @alert.save
@@ -80,7 +82,13 @@ class AlertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def alert_params
-      params.require(:alert).permit(:message)
+      params.require(:alert).permit(:message, :volunters, :latitude, :longitude).merge(category_id: params[:category_id])
+    end
+    
+    def set_coordinates(address)
+      coordinates = GetCoordinates.call(address: address)
+      @alert.latitude = coordinates[:latitude]
+      @alert.longitude =  coordinates[:longitude]
     end
     
 end

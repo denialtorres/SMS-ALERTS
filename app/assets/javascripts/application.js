@@ -16,3 +16,9 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+//= require jquery.geocomplete
+
+$(document).on("turbolinks:load", function() {
+    console.log("funciona")
+    $('#geo-input').geocomplete();
+});  
