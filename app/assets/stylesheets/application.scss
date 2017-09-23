@@ -2,6 +2,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// Variables
+$font-primary: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+$color-black: #000;
+$color-white: #fff;
+$color-primary: #00d88e;
+$color-secundary: #e6e6e6;
+$box-shadow-color: #dadada;
+$color-gray-light: #a8a8a8;
+$border-gray-color: #e7e7e7;
 
 html{
 	height: 100%;
@@ -45,6 +54,32 @@ hr{
 	font-family: 'Space Mono', monospace;
 }
 
+// Footer
+.sms-footer {
+  background: $color-black;
+  padding: 25px 0;
+
+  .sms-footer__logotype {
+    width: 180px;
+  }
+
+  .sms-footer-navigation {
+    .nav {
+      li {
+        a {
+          color: $color-white;
+          text-decoration: none;
+					text-align: center;
+          &:hover {
+            background-color: $color-white;
+						color: $color-black;
+						font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
 
 body {
 	font-family: "Roboto", "Helvetica", "Arial", sans-serif; }
@@ -137,5 +172,6 @@ body {
 	
 	/*# sourceMappingURL=home.css.map */
   
+
 
 
