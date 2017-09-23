@@ -15,7 +15,13 @@
     <h2>Mensaje</h2>
     <%= f.text_area :message, cols: "30", rows: "5", placeholder: "No Mayor de 150" %>
   </div>
+  <div class="field">
+    <h2>Categoria</h2>
+    <%= select_tag 'category_id', options_for_select(@categories) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
