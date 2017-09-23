@@ -25,8 +25,12 @@ class AlertsController < ApplicationController
   # POST /alerts.json
   def create
     @alert = Alert.new(alert_params)
-    @alert.volunters = @alert.subscribed_users.count
+    volunters = @alert.subscribed_users
+    @alert.volunters = volunters.count
     set_coordinates(params[:search])
+    
+    SendSms.call(volunters: volunters, message: @alert.message )
+    
     # @client = Twilio::REST::Client.new 
     
     # Contact.all.each do |contact|
