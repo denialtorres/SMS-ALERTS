@@ -31,13 +31,17 @@
               <div class="form-group">
                 <%= f.label :phone,"Tu Telefono", :class => "control-label" %><br>
                 <%= f.text_field :phone, :class => "form-control"  %>
-   <input id="geo-input" type="text" placeholder="Type in an address" value="" />
 
               </div>
               <div class="form-group">
                 <%= f.label :email,"Correo Electronico", :class => "control-label" %><br>
                 <%= f.text_field :email, :class => "form-control"  %>
               </div>
+              <div class="form-group">
+                <%= label_tag 'Donde Te encuentras para poder apoyar' %>
+                <%= text_field_tag 'search', params[:address], placeholder: 'Deportivo Benito Juárez', :class => "form-control", :id => 'geo-input' %>
+              </div>
+              
               <h3>Cuentanos un poco de ti, en que tienes experiencia, como te gustaria ayudar</br>
               (Opcional)</h3>
               <div class="form-group">
@@ -65,4 +69,6 @@
 </div>
 
 <% end %>
+
+
 

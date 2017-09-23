@@ -32,6 +32,7 @@ gem 'twilio-ruby', '~> 5.2.3'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'popper_js', '~> 1.12.3'
 gem 'geocomplete_rails'
+gem 'geocoder'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -24,8 +24,12 @@ class ContactsController < ApplicationController
   # POST /contacts
   # POST /contacts.json
   def create
-    @contact = Contact.new(contact_params)
 
+    @contact = Contact.new(contact_params)
+    set_coordinates(params[:search])
+    puts "ESTOS SON TUS PARAMETROS"
+    puts params[:search]
+    puts Geocoder.search("params[:search]")
     respond_to do |format|
       if @contact.save
         format.html { redirect_to root_path, notice: 'Contacto creado exitosamente' }
@@ -69,6 +73,13 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :phone, :category_ids => [])
+      params.require(:contact).permit(:latitude, :longitude, :name, :phone, :email, :about_yo, :category_ids => [])
+    end
+    
+    def set_coordinates(address)
+      coordinates = 
+      @contact.latitude = 1
+      @contact.longitude = 1
     end
 end
+
