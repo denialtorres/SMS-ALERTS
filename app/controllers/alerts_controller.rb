@@ -13,6 +13,7 @@ class AlertsController < ApplicationController
 
   # GET /alerts/new
   def new
+    @categories = helpers.categories_collection
     @alert = Alert.new
   end
 
@@ -36,7 +37,7 @@ class AlertsController < ApplicationController
     #   })
     # end  
     
-    @categories = Category.all
+   
     
     respond_to do |format|
       if @alert.save

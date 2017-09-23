@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <h2>Categoria</h2>
-    <%= select_tag 'category_id', options_for_select(Category.all.collect{|u| [u.name, u.id]}) %>
+    <%= select_tag 'category_id', options_for_select(@categories) %>
   </div>
   <div class="actions">
     <%= f.submit %>
