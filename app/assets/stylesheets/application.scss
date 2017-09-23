@@ -10,7 +10,7 @@ $color-primary: #00d88e;
 $color-secundary: #e6e6e6;
 $box-shadow-color: #dadada;
 $color-gray-light: #a8a8a8;
-$border-gray-color: #e7e7e7; 
+$border-gray-color: #e7e7e7;
 
 html{
 	height: 100%;
@@ -71,7 +71,9 @@ hr{
           text-decoration: none;
 
           &:hover {
-            color: darken($color-white, 5%);
+            background-color: white;
+						color: black;
+						font-weight: bold;
           }
         }
       }
