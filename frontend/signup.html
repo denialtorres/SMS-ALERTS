@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link href="signup.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="row">
+    <h1 class="col-12 sms-header">Ingresa tus Datos</h1>
+  </div>
+  <div class="row">
+    <p class="col-11 sms-description">
+      Ingresa tus datos y la información de la(s) zona(s) donde puedes ayudar.
+    </p>
+    <p class="col-11 sms-description">
+      Cuando se presente un evento en tu zona, nosotros te avisaremos via SMS al instante.
+    </p>
+  </div>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="sms-name">Nombre</label>
+        <input type="text" class="form-control" id="sms-name" placeholder="Nombre">
+      </div>
+      <div class="form-group">
+        <label for="sms-cellphone">Número Celular</label>
+        <input type="number" class="form-control" id="sms-cellphone" placeholder="Número Celular">
+        <small class="form-text text-muted">Ingresa los 10 digitos</small>
+        <small class="form-text text-muted">Tu número celular no será publicado o compartido</small>
+      </div>
+      <div class="form-group">
+        <label for="sms-states-select">Estado de la República donde te encuentras</label>
+        <select class="form-control" id="sms-states-select">
+          <option value="0">Todo México</option>
+          <option value="1">Aguascalientes</option>
+          <option value="2">Baja California</option>
+          <option value="3">Baja California Sur</option>
+          <option value="4">Campeche</option>
+          <option value="5">Coahuila de Zaragoza</option>
+          <option value="6">Colima</option>
+          <option value="7">Chiapas</option>
+          <option value="8">Chihuahua</option>
+          <option value="9">Distrito Federal</option>
+          <option value="10">Durango</option>
+          <option value="11">Guanajuato</option>
+          <option value="12">Guerrero</option>
+          <option value="13">Hidalgo</option>
+          <option value="14">Jalisco</option>
+          <option value="15">México</option>
+          <option value="16">Michoacán de Ocampo</option>
+          <option value="17">Morelos</option>
+          <option value="18">Nayarit</option>
+          <option value="19">Nuevo León</option>
+          <option value="20">Oaxaca</option>
+          <option value="21">Puebla</option>
+          <option value="22">Querétaro</option>
+          <option value="23">Quintana Roo</option>
+          <option value="24">San Luis Potosí</option>
+          <option value="25">Sinaloa</option>
+          <option value="26">Sonora</option>
+          <option value="27">Tabasco</option>
+          <option value="28">Tamaulipas</option>
+          <option value="29">Tlaxcala</option>
+          <option value="30">Veracruz de Ignacio de la Llave</option>
+          <option value="31">Yucatán</option>
+          <option value="32">Zacatecas</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sms-zone">Zona donde puedes ayudar</label>
+        <input type="text" class="form-control" id="sms-zone" placeholder="Zona">
+        <small class="form-text text-muted">Ingresa la zona, delegación, municipio o colonia en la que puedes ayudar</small>
+      </div>
+      <div class="form-group">
+        <a class="sms-add-new-zone"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agrega otra zona</a>
+
+      </div>
+      <button type="submit" class="btn sms-btn-primary">Finalizar</button>
+    </form>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+
+</html>
