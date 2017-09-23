@@ -33,6 +33,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'popper_js', '~> 1.12.3'
 gem 'geocomplete_rails'
 gem 'geocoder'
+gem 'interactor-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -41,6 +42,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'awesome_rails_console'
+  gem 'pry-rails'
 end
 
 group :development do

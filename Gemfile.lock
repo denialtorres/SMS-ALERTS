@@ -78,6 +78,10 @@ GEM
       hirb (~> 0.5)
       unicode-display_width (~> 0.1.1)
     i18n (0.8.6)
+    interactor (3.1.0)
+    interactor-rails (2.1.1)
+      interactor (~> 3.0)
+      rails (>= 4.2, < 5.2)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -211,11 +215,13 @@ DEPENDENCIES
   geocomplete_rails
   hirb
   hirb-unicode
+  interactor-rails
   jbuilder (~> 2.0)
   jquery-rails
   pg
   popper_js (~> 1.12.3)
   pry-byebug
+  pry-rails
   pry-stack_explorer
   rails (~> 5.0.6)
   rails_12factor

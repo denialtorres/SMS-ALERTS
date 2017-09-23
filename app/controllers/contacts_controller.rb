@@ -77,9 +77,9 @@ class ContactsController < ApplicationController
     end
     
     def set_coordinates(address)
-      coordinates = 
-      @contact.latitude = 1
-      @contact.longitude = 1
+      coordinates = GetCoordinates.call(address: address)
+      @contact.latitude = coordinates[:latitude]
+      @contact.longitude =  coordinates[:longitude]
     end
 end
 
