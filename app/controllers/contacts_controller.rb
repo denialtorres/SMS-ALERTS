@@ -27,9 +27,6 @@ class ContactsController < ApplicationController
 
     @contact = Contact.new(contact_params)
     set_coordinates(params[:search])
-    puts "ESTOS SON TUS PARAMETROS"
-    puts params[:search]
-    puts Geocoder.search("params[:search]")
     respond_to do |format|
       if @contact.save
         format.html { redirect_to root_path, notice: 'Contacto creado exitosamente' }
