@@ -17,7 +17,7 @@ class HomeController < ApplicationController
         set_meta_tags og: {
                             title: site,
                             type: 'website',
-                            image: ActionController::Base.helpers.image_url('fbcover.jpg'),
+                            image: ActionController::Base.helpers.image_url('fbcover.png'),
                             description: description 
                           }
       
