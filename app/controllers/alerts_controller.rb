@@ -29,9 +29,11 @@ class AlertsController < ApplicationController
     @alert.volunters = volunters.count
     set_coordinates(params[:search])
     query = helpers.get_state(@alert.latitude, @alert.longitude)
-    @alert.zone =  helpers.get_zone(query)
-    @alert.state = query.state
     
+    @alert.state = query.state
+    @alert.zone =  helpers.get_zone(query)
+    
+
     respond_to do |format|
       if @alert.save
         format.html { redirect_to root_path, notice: 'alerta enviada exitosamente' }
