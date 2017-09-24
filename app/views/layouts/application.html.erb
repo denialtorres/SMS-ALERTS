@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ALERTAS-SMS</title>
+  
       <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4-LkXroaG8cjUszwUORc1fbwWPDPGBZo&libraries=places"></script>
-
+  <% set_meta_tags twitter: {
+                      card: "summary_large_image",
+                      title: 'Voluntarios SMS',
+                      description: 'Ésta es una herramienta para mantener informados a voluntarios y/o expertos vía SMS 
+                                    sobre cómo y dónde más se require ayuda inmediata',
+                      image: image_url('fbcover.png')
+                    } %>
+    <%= display_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     

@@ -12,5 +12,6 @@ module HomeHelper
             return zone
           end
         end
-    end    
+    end  
+    
 end
