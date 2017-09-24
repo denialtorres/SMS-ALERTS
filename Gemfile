@@ -35,7 +35,7 @@ gem 'geocomplete_rails'
 gem 'geocoder'
 gem 'interactor-rails'
 gem 'bootsnap', require: false
-
+gem 'meta-tags'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
