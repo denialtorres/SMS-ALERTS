@@ -82,8 +82,10 @@ hr{
 }
 
 body {
-	font-family: "Roboto", "Helvetica", "Arial", sans-serif; }
-  
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+	margin-top: -10px;}
+  	
+  	
   .btn.btn-round-green {
 	border: 0;
 	color: #fff;
@@ -178,3 +180,6 @@ p#privacy {
     margin-left: 10px;
 }
 
+p#notice {
+    margin-top: 10px;
+}

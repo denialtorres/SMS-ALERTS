@@ -28,21 +28,12 @@ class AlertsController < ApplicationController
     volunters = @alert.subscribed_users
     @alert.volunters = volunters.count
     set_coordinates(params[:search])
+    query = helpers.get_state(@alert.latitude, @alert.longitude)
     
-    SendSms.call(volunters: volunters, message: @alert.message )
+    @alert.state = query.state
+    @alert.zone =  helpers.get_zone(query)
     
-    # @client = Twilio::REST::Client.new 
-    
-    # Contact.all.each do |contact|
-    #   @client.api.account.messages.create({
-    #     :from => '+15627312206',
-    #     :to => "+52#{contact.phone}",
-    #     :body => @alert.message,
-    #   })
-    # end  
-    
-   
-    
+
     respond_to do |format|
       if @alert.save
         format.html { redirect_to root_path, notice: 'alerta enviada exitosamente' }
@@ -86,7 +77,7 @@ class AlertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def alert_params
-      params.require(:alert).permit(:message, :volunters, :latitude, :longitude).merge(category_id: params[:category_id])
+      params.require(:alert).permit(:message, :volunters, :latitude, :longitude, :state, :zone).merge(category_id: params[:category_id])
     end
     
     def set_coordinates(address)
