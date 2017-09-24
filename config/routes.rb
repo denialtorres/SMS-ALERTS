@@ -4,8 +4,11 @@ Rails.application.routes.draw do
     
     
     resources :alerts
-    resources :contacts
-  
+    resources :contacts,  :only => [:new, :create]
+   
+    match 'formulario' => 'contacts#new',  :via => [:get]
+
+   
     root "home#index"
  end
 end
