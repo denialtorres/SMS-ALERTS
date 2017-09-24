@@ -1,7 +1,10 @@
 class Contact < ActiveRecord::Base
+  attr_accessor :address
+
   has_many :categorizations
   has_many :categories, through: :categorizations
 
+  validates :name, :phone, :email, :address, presence: true
   validates :phone, numericality: true, length: { is: 10 }, uniqueness: true
   
   def self.with_all_categories(category_ids)
