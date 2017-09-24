@@ -1,7 +1,21 @@
 class HomeController < ApplicationController
   before_action :meta_tags_codeando
   def index
-    @alerts = Alert.all.order('created_at ASC').reverse_order
+    # @contacts = Contact.all
+    # @alerts = Alert.all.order('created_at ASC').reverse_order
+    @alerts    = Alert.page(page)
+    @next_page = Alert.next_page(page)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  private
+  def page
+    (params[:page] || 1).to_i
+
   end
   
   

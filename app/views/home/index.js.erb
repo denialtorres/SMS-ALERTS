@@ -1,0 +1,6 @@
+$('#alerts').append('<%= j render(partial: "alerts") %>');
+
+<% if @next_page %>
+  $('#load-more').attr('data-page', '<%= @next_page %>');
+  $('#load-more').show();
+<% end %>

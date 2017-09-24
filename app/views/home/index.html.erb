@@ -16,75 +16,70 @@
 </div>
 <main class="sms-main-content">
   <section class="sms-alerts">
-      <div class="container">
-          <h1>Anuncios</h1>
-          <div class="row">
-            <% @alerts.each do |alert| %>
-              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                  <div class="sms-panel-box">
-                      <h5 class="sms-panel-box__date">
-                        Hace
-                        <%= time_ago_in_words(alert.created_at) %>
-                      </h5>
-                      <h4 class="sms-panel-box__title">
-                        Estado: 
-                        <strong><%= alert.state %></strong>
-                      </h4>
-                      <h4 class="sms-panel-box__title mb1">
-                        Zona: 
-                      <strong><%= alert.zone %></strong>
-                      </h4>
-                      <p class="sms-panel-box__description">
-                        <%= alert.message %>
-                      </p>
-                      <h6 class="sms-panel-box__volunters">Enviado a <%= alert.volunters %> voluntarios</h6>
-                  </div>
-              </div>
-            <% end %>
-          </div>
-          <div class="row">
-              <div class="col">
-                  <p class="sms-button-row text-center">
-                      <button class="btn btn-primary btn-md btn-round-green">Cargar más</button>
-                  </p>
-              </div>
-          </div>
+    <div class="container">
+      <h1>Anuncios</h1>
+      <div class="row" id="alerts">
+        <%= render partial: 'alerts' %>
       </div>
+      <div class="row">
+        <div class="col">
+          <p class="sms-button-row text-center">
+            <button class="btn btn-primary btn-md btn-round-green" id="load-more" data-page="<%= @next_page %>">
+              Cargar más
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 <footer class="sms-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <%= image_tag('logotype-lg.png', class: 'sms-footer__logotype') %>
-                <p id="privacy">
-                AVISO DE PRIVACIDAD</br>
-                Codeando México, A.C., con domicilio en Ometusco 25-2, 25-2, Col. Hipódromo-Condesa. Delegación Cuauhtémoc.
-                Ciudad de México. 06100 de conformidad con los establecido en la Ley de Protección de Datos Personales en Posesión de particulares, su reglamento y demás disposiciones aplicables en la materia, es responsable de solicitar sus datos personas, al igual que el uso que se les dé a los mismos y de su protección. Los datos personales que de forma voluntaria proporcione serán utilizados para:
-                </br>
-                I.	Crear una base de datos de uso interno. </br>
-                II.	Identificarlo para localizarlo y enviarle información y/o alertas sobre las zonas afectadas por el sismo. </br>
-                En caso de cualquier duda puede ponerse en contacto con Codeando México, A.C. en <a href="mailto:equipo@codeandomexico.org">equipo@codeandomexico.org</a>. Para mayor información sobre nuestro Aviso de Privacidad consulte xxxxxxx
-                </p>
-            </div>
-            <div class="col-md-8">
-                <nav class="sms-footer-navigation">
-                    <ul class="nav justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Website</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Twitter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Facebook</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Github</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag('logotype-lg.png', class: 'sms-footer__logotype') %>
+        <p id="privacy">
+          AVISO DE PRIVACIDAD</br>
+          Codeando México, A.C., con domicilio en Ometusco 25-2, 25-2, Col. Hipódromo-Condesa. Delegación Cuauhtémoc.
+          Ciudad de México. 06100 de conformidad con los establecido en la Ley de Protección de Datos Personales en Posesión de particulares, su reglamento y demás disposiciones aplicables en la materia, es responsable de solicitar sus datos personas, al igual que el uso que se les dé a los mismos y de su protección. Los datos personales que de forma voluntaria proporcione serán utilizados para:</br>
+          I.	Crear una base de datos de uso interno.</br>
+          II.	Identificarlo para localizarlo y enviarle información y/o alertas sobre las zonas afectadas por el sismo.</br>
+          En caso de cualquier duda puede ponerse en contacto con Codeando México, A.C. en <a href="mailto:equipo@codeandomexico.org">equipo@codeandomexico.org</a>. Para mayor información sobre nuestro Aviso de Privacidad consulte xxxxxxx
+        </p>
+      </div>
+      <div class="col-md-8">
+        <nav class="sms-footer-navigation">
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Website</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Twitter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Facebook</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Github</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
+  </div>
 </footer>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#load-more').click(function() {
+      
+      $(this).hide();
+
+      $.get({
+        url: "<%= home_index_path %>",
+        data: { page: $(this).attr('data-page') },
+        dataType: "script"
+      })
+    });
+  });
+</script>
