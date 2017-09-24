@@ -1,0 +1,11 @@
+<% @alerts.each do |alert| %>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+    <div class="sms-panel-box">
+      <h5 class="sms-panel-box__date">Hace <%= time_ago_in_words(alert.created_at) %></h5>
+      <h4 class="sms-panel-box__title">Estado: <strong><%= alert.state %></strong></h4>
+      <h4 class="sms-panel-box__title mb1">Zona: <strong><%= alert.zone %></strong></h4>
+      <p class="sms-panel-box__description"><%= alert.message %></p>
+      <h6 class="sms-panel-box__volunters">Enviado a <%= alert.volunters %> voluntarios</h6>
+    </div>
+  </div>
+<% end %>
