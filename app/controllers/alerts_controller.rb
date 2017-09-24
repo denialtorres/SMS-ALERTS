@@ -33,6 +33,7 @@ class AlertsController < ApplicationController
     @alert.state = query.state
     @alert.zone =  helpers.get_zone(query)
     
+    SendSms.call(volunters: volunters, message: @alert.message )
 
     respond_to do |format|
       if @alert.save
