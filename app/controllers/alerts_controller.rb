@@ -33,12 +33,12 @@ class AlertsController < ApplicationController
     @alert.state = query.state
     @alert.zone =  helpers.get_zone(query)
     
-    SendSms.call(volunters: volunters, message: @alert.message )
 
     respond_to do |format|
       if @alert.save
         format.html { redirect_to root_path, notice: 'alerta enviada exitosamente' }
         format.json { render :show, status: :created, location: @alert }
+        SendSms.call(volunters: volunters, message: @alert.message )
       else
         format.html { render :new }
         format.json { render json: @alert.errors, status: :unprocessable_entity }
