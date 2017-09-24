@@ -28,12 +28,11 @@
                       </h5>
                       <h4 class="sms-panel-box__title">
                         Estado: 
-                        <% query = get_state(alert.latitude, alert.longitude) %>
-                        <strong><%= query.state %></strong>
+                        <strong><%= alert.state %></strong>
                       </h4>
                       <h4 class="sms-panel-box__title mb1">
                         Zona: 
-                      <strong><%= get_zone(query) %></strong>
+                      <strong><%= alert.zone %></strong>
                       </h4>
                       <p class="sms-panel-box__description">
                         <%= alert.message %>
