@@ -5,19 +5,12 @@
 </style>
 
 <%= form_for(@contact) do |f| %>
-
   <% if @contact.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
-      <ul>
-      <% @contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <h4><%= errors_message(@contact.errors) %></h4>
     </div>
   <% end %>
-<div class="col-md-12">
+  <div class="col-md-12">
     <div class="section">
       <div class="container">
         <h1>Llena el formulario</h1>
@@ -25,25 +18,28 @@
           <div class="col-md-6">
             <form role="form">
               <div class="form-group">
-                <%= f.label :name,"Tu Nombre", :class => "control-label" %><br>
+                <%= f.label :name,"Nombre", :class => "control-label" %>
+                <%= input_error(@contact.errors[:name]) %>
                 <%= f.text_field :name, :class => "form-control"  %>
               </div>
               <div class="form-group">
-                <%= f.label :phone,"Tu Telefono", :class => "control-label" %><br>
+                <%= f.label :phone,"Teléfono", :class => "control-label" %>
+                <%= input_error(@contact.errors[:phone]) %>
                 <%= f.text_field :phone, :class => "form-control"  %>
-
               </div>
               <div class="form-group">
-                <%= f.label :email,"Correo Electronico", :class => "control-label" %><br>
+                <%= f.label :email,"Correo electrónico", :class => "control-label" %>
+                <%= input_error(@contact.errors[:email]) %>
                 <%= f.text_field :email, :class => "form-control"  %>
               </div>
               <div class="form-group">
-                <%= label_tag 'Donde Te encuentras para poder apoyar' %>
-                <%= text_field_tag 'search', params[:address], placeholder: 'Deportivo Benito Juárez', :class => "form-control", :id => 'geo-input' %>
+                <%= f.label :address, 'Dónde te encuentras para poder apoyar' %>
+                <%= input_error(@contact.errors[:address]) %>
+                <%= f.text_field :address, placeholder: 'Deportivo Benito Juárez', :class => "form-control", :id => 'geo-input' %>
               </div>
               
-              <h3>Cuentanos un poco de ti, en que tienes experiencia, como te gustaria ayudar</br>
-              (Opcional)</h3>
+              <h3>Cuéntanos un poco de tí, ¿en qué tienes experiencia?, ¿cómo te gustaría ayudar?</br>
+              (opcional)</h3>
               <div class="form-group">
                 <%= f.text_area :about_yo, :rows => 4, :cols => 50, :class => "form-control" %>
               </div>
@@ -51,7 +47,7 @@
           </div>
         </div>
         <div class="row">
-          <h1>Selecciona las areas en las que quieres ser voluntario (pueden ser las que quieras)</h1>
+          <h1>Selecciona las áreas en las que quieres ser voluntario (pueden ser las que quieras)</h1>
             <div class="col-md-12">
               <ul class="list-group">
                 <%= hidden_field_tag "contact[category_ids][]", nil %>
