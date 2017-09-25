@@ -76,7 +76,7 @@
       $(this).hide();
 
       $.get({
-        url: "<%= home_index_path %>",
+        url: "<%= root_path %>",
         data: { page: $(this).attr('data-page') },
         dataType: "script"
       })
