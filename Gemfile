@@ -36,8 +36,9 @@ gem 'geocoder'
 gem 'interactor-rails'
 gem 'bootsnap', require: false
 gem 'meta-tags'
-gem "font-awesome-rails"
-
+gem 'font-awesome-rails'
+gem 'sidekiq'
+gem 'puma', '~> 3.4'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
