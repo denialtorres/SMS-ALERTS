@@ -46,8 +46,10 @@
               <ul class="list-group">
                 <%= hidden_field_tag "contact[category_ids][]", nil %>
                 <% Category.all.each do |category| %>
-                  <%= check_box_tag "contact[category_ids][]", category.id, @contact.category_ids.include?(category.id), id: dom_id(category) %>
-                  <%= label_tag dom_id(category), category.name %><br>
+                  <div class="checkbox-wrapper">
+                    <%= check_box_tag "contact[category_ids][]", category.id, @contact.category_ids.include?(category.id), id: dom_id(category), class: 'checkbox-input'  %>
+                    <%= label_tag dom_id(category), category.name,  class: 'checkbox-label' %><br>
+                  </div>
                   <li class="list-group-item"><%= category.description %></li>
                 <% end %>
             </ul>

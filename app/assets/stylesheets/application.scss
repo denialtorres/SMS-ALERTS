@@ -1,6 +1,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 // Variables
 $font-primary: 'Roboto', 'Helvetica', 'Arial', sans-serif;
@@ -188,4 +189,52 @@ p#privacy {
 
 p#notice {
     margin-top: 10px;
+}
+
+
+
+.checkbox-input {
+  float:left;
+  width:auto;
+}
+
+.checkbox-label {
+  display:inline;
+  font-size: 16px;
+}
+
+input[type="checkbox"]{ display:none; }
+
+.checkbox-label {
+  padding-left: 2.5em;
+  position: relative;
+}
+
+.checkbox-label:before {
+  margin-top: -5px;
+  content: '';
+  border: solid 1px;
+  border-color: #d3d3d3;
+  border-radius: 5px;
+  width: 2.0em;
+  height: 2.0em;
+  position: absolute;
+  left: 0px;
+  box-shadow: inset 0 0px 10px -4px rgba(0, 0, 0, 0.25);
+}
+
+.checkbox-input[type="checkbox"]:checked + .checkbox-label:before {
+  content: '\f00c';
+  font-family: FontAwesome;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  opacity: 1;
+  color: #55616e;
+}
+
+.checkbox-wrapper {
+  margin: 10px;
 }
