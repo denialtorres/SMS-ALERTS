@@ -70,6 +70,8 @@ GEM
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     geocoder (1.4.4)
     geocomplete_rails (1.7.0)
       railties (>= 3.1)
@@ -217,6 +219,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.1.0)
+  font-awesome-rails
   geocoder
   geocomplete_rails
   hirb
