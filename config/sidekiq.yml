@@ -1,0 +1,7 @@
+:verbose: false
+:concurrency: 10
+
+:timeout: 8
+
+production:
+    :concurrency: 25
