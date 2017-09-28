@@ -32,12 +32,6 @@
                 <%= input_error(@contact.errors[:email]) %>
                 <%= f.text_field :email, :class => "form-control"  %>
               </div>
-              <div class="form-group">
-                <%= f.label :address, 'Dónde te encuentras para poder apoyar' %>
-                <%= input_error(@contact.errors[:address]) %>
-                <%= f.text_field :address, placeholder: 'Deportivo Benito Juárez', :class => "form-control", :id => 'geo-input' %>
-              </div>
-              
               <h3>Cuéntanos un poco de tí, ¿en qué tienes experiencia?, ¿cómo te gustaría ayudar?</br>
               (opcional)</h3>
               <div class="form-group">

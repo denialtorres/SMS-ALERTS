@@ -20,8 +20,6 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        set_coordinates(params[:contact][:address])
-
         format.html { redirect_to root_path, notice: 'Contacto creado exitosamente' }
         format.json { render :show, status: :created, location: @contact }
       else
@@ -59,13 +57,7 @@ class ContactsController < ApplicationController
 
     def contact_params
       params.require(:contact)
-            .permit(:latitude, :longitude, :name, :phone, :email, :address, :about_yo, :category_ids => [])
-    end
-    
-    def set_coordinates(address)
-      coordinates = GetCoordinates.call(address: address)
-      @contact.latitude = coordinates[:latitude]
-      @contact.longitude = coordinates[:longitude]
+            .permit(:name, :phone, :email, :address, :about_yo, :category_ids => [])
     end
 end
 
