@@ -22,6 +22,6 @@ class Alert < ActiveRecord::Base
   end
   
   def send_sms
-    SendSms.call(volunters: subscribed_users, message: message )
+    SendMessagesJob.perform_later(subscribed_users.to_a, message)
   end
 end
